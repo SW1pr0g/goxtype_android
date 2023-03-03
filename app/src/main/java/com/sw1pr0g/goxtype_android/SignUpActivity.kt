@@ -42,10 +42,11 @@ class SignUpActivity : AppCompatActivity() {
         var password: String = findViewById<EditText>(R.id.editTextPassword).text.toString()
 
         if (name.isNotEmpty() && email.isNotEmpty() && phone.isNotEmpty() && password.isNotEmpty())
-
-            Toast.makeText(applicationContext, "Your credetinals - ${name}, ${email}, ${phone}, ${password}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Your credetinals - ${name}, ${email}, ${phone}, " +
+                    "${password}", Toast.LENGTH_SHORT).show()
         else
             Toast.makeText(applicationContext, "Error! Fields empty!", Toast.LENGTH_SHORT).show()
+
     }
 
 }
