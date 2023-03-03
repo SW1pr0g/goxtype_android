@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -33,12 +34,18 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
-    fun addUser() {
+    private fun addUser() {
 
-        var login: String = findViewById<TextView>(R.id.textInputEmail).text.toString()
+        var name: String = findViewById<EditText>(R.id.editTextName).text.toString()
+        var email: String = findViewById<EditText>(R.id.editTextEmail).text.toString()
+        var phone: String = findViewById<EditText>(R.id.editTextPhone).text.toString()
+        var password: String = findViewById<EditText>(R.id.editTextPassword).text.toString()
 
-        Toast.makeText(applicationContext, login, Toast.LENGTH_SHORT).show()
+        if (name.isNotEmpty() && email.isNotEmpty() && phone.isNotEmpty() && password.isNotEmpty())
 
+            Toast.makeText(applicationContext, "Your credetinals - ${name}, ${email}, ${phone}, ${password}", Toast.LENGTH_SHORT).show()
+        else
+            Toast.makeText(applicationContext, "Error! Fields empty!", Toast.LENGTH_SHORT).show()
     }
 
 }
